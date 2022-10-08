@@ -1,0 +1,5 @@
+__pycache__/
+.log_venv
+.vscode/
+settings.json
+report-2017.06.30_sample.html
