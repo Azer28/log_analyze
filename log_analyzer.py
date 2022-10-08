@@ -81,10 +81,11 @@ def generate_table_json(abs_filename: str, read_generator) -> List[Dict]:
     logged_urls = defaultdict(list)
     sum_req_time = 0
     parse_error = 0
+    i = 1 
 
-    for i, x in enumerate(read_generator(abs_filename)):
+    for i, x in enumerate(read_generator(abs_filename), start=1):
         try:
-        # regex with first non-capturing group and non-greedy search
+            # regex with first non-capturing group and non-greedy search
             res = re.findall('(?:GET|POST|HEAD|PUT|OPTIONS)\s(.*?)\sHTTP', x)
             if res:
                 endpoint = res[0]
